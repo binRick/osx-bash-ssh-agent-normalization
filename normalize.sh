@@ -1,6 +1,6 @@
 
 KEYS_TO_LOAD="~/.ssh/id_rsa"
-CUR_SSH_AGENT_PIDS="$(ps -o pid=,comm= -U rick| grep ssh-agent| cut -d' ' -f1| sort -u)"
+CUR_SSH_AGENT_PIDS="$(ps -o pid=,comm= -U $USER| grep ssh-agent| cut -d' ' -f1| sort -u)"
 LATEST_SSH_AGENT_PID="$(echo $CUR_SSH_AGENT_PIDS|sort -u|tail -n1)"
 
 CUR_SSH_AGENT_SOCKETS="$(find /var/folders 2>/dev/null| grep 'agent\.[0-9].*[0-9]$')"
